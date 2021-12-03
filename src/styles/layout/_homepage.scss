@@ -1,0 +1,9 @@
+@use '../abstracts'as *;
+
+section#homepage {
+   height: $homepageHeight;
+
+   h1 {
+      font-size: 15.0rem
+   }
+}
