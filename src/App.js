@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <Fragment>
           <Routes>
-          <Route path='/' element={<><Navigation /><Homepage /><Posts /></>} />
-          <Route path='/post/:id' element={<><Navigation /><PostPage /></>} />
+          <Route path='/' exact element={<><Navigation /><Homepage /><Posts /></>} />
+          <Route path='/post/:id' exact element={<><Navigation /><PostPage /></>} />
           {/*<Route path='/post/:id' component={Navigation} /> component nefunguje, element funguje*/}
           </Routes>
       </Fragment>
