@@ -14,7 +14,7 @@ function PostItem(props) { //Props jako parametr mi umožní přístup k propere
    useEffect(() => {
       setPost(props.post)
 
-      axios.get(`/wp-json/wp/v2/media/${post.featured_media}`)
+      axios.get(`https://adm.marek.media/wp-json/wp/v2/media/${post.featured_media}`)
       .then(res => {
          setImgUrl(res.data.media_details.sizes.full.source_url)
          //setPost(props.post)

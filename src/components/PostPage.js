@@ -10,12 +10,12 @@ function PostPage() {
 
 
    useEffect(() => {
-      axios.get(`/wp-json/wp/v2/posts/${id}`)
+      axios.get(`https://adm.marek.media/wp-json/wp/v2/posts/${id}`)
       .then(res => {
          setPost(res.data)
 
          //console.log(res.data.featured_media)
-         axios.get(`/wp-json/wp/v2/media/${res.data.featured_media}`).then(res => {
+         axios.get(`https://adm.marek.media/wp-json/wp/v2/media/${res.data.featured_media}`).then(res => {
          //console.log(res.data)
          setImg(res.data)
          setIsLoaded(true)

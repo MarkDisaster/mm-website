@@ -7,7 +7,7 @@ function Homepage() {
    const [isLoaded, setIsLoaded] = useState(false)
 
    useEffect(() => {
-      axios.get(`/wp-json/wp/v2/pages/2`)
+      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages/2`)
       .then(res => {
          setHomepage(res.data)
          setIsLoaded(true)
