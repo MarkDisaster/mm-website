@@ -1,59 +1,50 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
-import propTypes from 'prop-types'
 import axios from 'axios'
 
-export class PostItem extends Component {
+function PostItem(props) { //Props jako parametr mi umožní přístup k propereties u potomka komponenty.
+   //console.log(props)
 
-   state = {
-      imgUrl: '',
-      author: '',
-      isLoaded: false
-   }
+   const [imgUrl, setImgUrl] = useState([])
+   const [post, setPost] = useState([])
+   const [isLoaded, setIsLoaded] = useState(false)
 
-   static propTypes = {
-      post: propTypes.object.isRequired
-   }
+   //console.log('props:' + props)
 
-   componentDidMount() {
-      const {featured_media, author} = this.props.post
+   useEffect(() => {
+      setPost(props.post)
 
-      const getImageUrl = axios.get(`/wp-json/wp/v2/media/${featured_media}`)
-      const getAuthor = axios.get(`/wp-json/wp/v2/users/${author}`)
-
-      Promise.all([getImageUrl, getAuthor]).then(res => {
-         console.log(res)
-         this.setState({
-            imgUrl: res[0].data.media_details.sizes.full.source_url,
-            //author: res[1].data.name,
-            isLoaded: true
-         })
+      axios.get(`/wp-json/wp/v2/media/${post.featured_media}`)
+      .then(res => {
+         setImgUrl(res.data.media_details.sizes.full.source_url)
+         //setPost(props.post)
+         setIsLoaded(true)
       })
-   }
-   
-   render() {
-      const {id, title, excerpt} = this.props.post
-      const {/*author,*/ imgUrl, isLoaded} = this.state
+      .catch(err => {
+         console.log(err)
+      })
+   }, [imgUrl, post, setImgUrl, setPost, props.post])
 
-      if(isLoaded) {
-         return (
+   if(isLoaded) {
+      return(
+         <div>
             <div className="post">
-               <div className="image"><img src={imgUrl} alt={title.rendered} /></div>
+               <div className="image">
+                  <img src={imgUrl} alt={post.title.rendered} />
+               </div>
                <div className="content">
                   <div className="title">
-                     <h2>{title.rendered}</h2>
+                     <h2>{post.title.rendered}</h2>
                   </div>
-                  <div className="excerpt" dangerouslySetInnerHTML={{__html: excerpt.rendered}} />
+                  <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
                   <div>
-                     <Link to={`/post/${id}`}>Přečíst</Link>
+                     <Link to={`/post/${post.id}`}>Přečíst</Link>
                   </div>
                </div>
-               
             </div>
-         )
-      }
-      return null
+         </div>
+      )
    }
+   return <div>{props.post.id}</div>
 }
-
 export default PostItem
