@@ -6,7 +6,7 @@ function PostItem(props) { //Props jako parametr mi umožní přístup k propere
    //console.log(props)
 
    const [imgUrl, setImgUrl] = useState([])
-   const [post, setPost] = useState([])
+   const [post, setPost] = useState(props.post)
    const [isLoaded, setIsLoaded] = useState(false)
 
    //console.log('props:' + props)
