@@ -1,5 +1,17 @@
-$menuColor: #ff6600;
-$menuHeight: 150px;
+$main-color: #000000;
+$secondary-color: #013CFE;
 
-/*Homepage*/
-$homepageHeight: calc(100vh - 150px);
+$tertiary-color: #E7E8EC;
+$quaternary-color: #FFFFFF;
+
+$font-family-primary: 'Inter',
+sans-serif;
+$font-family-secondary: 'Montserrat',
+sans-serif;
+
+$font-size-primary: 7.5rem;
+$font-size-secondary: 3.3rem;
+
+$header-height: 150px;
+$full-screen-height: calc(100vh - 150px);
+$max-width: 1200px;

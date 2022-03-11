@@ -1,17 +1,17 @@
 const NavItems = [
    {
       title: 'Hlavní strana',
-      path: '/mm-website/',
+      path: '/',
       cName: 'nav-item'
    },
    {
       title: 'Testovací stránka 2',
-      path: '/mm-website/testovaci-stranka-2',
+      path: '/testovaci-stranka-2',
       cName: 'nav-item'
    },
    {
       title: 'Příspěvky',
-      path: '/mm-website/posts',
+      path: '/posts',
       cName: 'nav-item'
    }
 ]

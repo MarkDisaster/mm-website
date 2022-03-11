@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import PostItem from './PostItem'
+import ProjectItem from './ProjectItem'
 
 
-function Posts() {
+function Projects() {
    const [posts, setPosts] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
 
@@ -21,9 +21,10 @@ function Posts() {
 if(isLoaded) {
    return (
       <>
-         <section id="posts">
+         <section id="projects">
+            <header></header>
             {posts.map(post => (
-               <PostItem key={post.id} post={post} />
+               <ProjectItem key={post.id} post={post} />
             ))}
          </section>
       </>
@@ -34,4 +35,4 @@ return (
    <div>Loading...</div>
 )
 }
-export default Posts
+export default Projects

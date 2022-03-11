@@ -20,9 +20,11 @@ function Homepage() {
 
    if(isLoaded) {
       return (
-         <section id="homepage">
-            <div dangerouslySetInnerHTML={{__html: Homepage.content.rendered}} />
-            <div>Načteno</div>
+         <section id="introduction">
+            <div className="content">
+               <div dangerouslySetInnerHTML={{__html: Homepage.content.rendered}} />
+            </div>
+            <a className="more-link" href="#">Kontakt</a>
          </section>
       )
    }
