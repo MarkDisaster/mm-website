@@ -1,15 +1,13 @@
 import React, {Fragment, useState, useEffect} from 'react'
-import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
 
 function Page() {
-   const {slug} = useParams()
    const [post, setPost] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
 
    
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=${slug}`)
+      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=kontakt-hlavni-strana`)
       .then(res => {
          setPost(res.data)
          //console.log('slug:' + slug)
@@ -18,18 +16,21 @@ function Page() {
       .catch(err => {
          console.log(err)
       })
-   }, [setPost, slug])
+   }, [setPost])
 
    if(isLoaded) {
       return (
          <>
-            <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
-            <div><Link to='/'>Zpět</Link></div>
+            <section id="contact">
+               <div className="contact">
+                  <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
+               </div>
+            </section>
          </> 
       )
    }
    return (
-      <div id="loading">Loading...</div>
+      <div>Loading...</div>
    )
 }
 

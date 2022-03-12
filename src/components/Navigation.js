@@ -21,18 +21,16 @@ function Navigation() {
 
                      {NavItems.map((item, index) => {
                      return <li key={index} className={item.cName}>
-                        <Link to={item.path} >
-                           <span>/{item.title}/</span>
-                        </Link>
+                        <Link to={item.path} >/{item.title}/</Link>
                      </li>
                   })}
                   </ul>
                </div>
                <div id="social-media">
-                  <a href="https://markdisaster.github.com">
+                  <a href="https://github.com/markdisaster" target="_blank">
                      <img className="arrow-right" src={GithubIcon} title="Github" alt="Github" />
                   </a>
-                  <a href="https://behance.net">
+                  <a href="https://behance.net/markdisaster" target="_blank">
                      <img className="arrow-right" src={BehanceIcon} title="Behance" alt="Behance" />
                   </a>
                </div>

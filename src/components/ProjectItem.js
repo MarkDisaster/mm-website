@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-function PostItem(props) { //Props jako parametr mi umožní přístup k propereties u potomka komponenty.
+function ProjectItem(props) { //Props jako parametr mi umožní přístup k propereties u potomka komponenty.
    //console.log(props)
 
    const [imgUrl, setImgUrl] = useState([])
@@ -27,24 +27,26 @@ function PostItem(props) { //Props jako parametr mi umožní přístup k propere
 
    if(isLoaded) {
       return(
-         <div>
-            <div className="post">
-               <div className="image">
-                  <img src={imgUrl} alt={post.title.rendered} />
-               </div>
-               <div className="content">
-                  <div className="title">
-                     <h2>{post.title.rendered}</h2>
-                  </div>
-                  <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-                  <div>
-                     <Link to={`/post/${post.id}`}>Přečíst</Link>
-                  </div>
+         <article>
+            <div className="thumbnail">
+            <Link to={`/post/${post.id}`} >
+               <img src={imgUrl} alt={post.title.rendered} />
+            </Link>
+            </div>
+            <div className="content">
+               <header>
+                  <h2>
+                     <Link to={`/post/${post.id}`}>{post.title.rendered}</Link>
+                  </h2>
+               </header>
+               <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+               <div>
+                  <Link className="more-link" to={`/post/${post.id}`}>Přečíst</Link>
                </div>
             </div>
-         </div>
+         </article>
       )
    }
    return <div>{props.post.id}</div>
 }
-export default PostItem
+export default ProjectItem

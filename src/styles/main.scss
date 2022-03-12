@@ -1,5 +1,5 @@
-@use 'abstracts' as *;
-@use 'base' as *;
+@use 'abstracts'as *;
+@use 'base'as *;
 
 
 #root {
@@ -26,7 +26,7 @@
    font-size: 0.9rem;
    text-transform: uppercase;
 
-   :hover {
+   &:hover {
       background-color: $secondary-color;
       color: $quaternary-color;
       text-decoration: none;
@@ -102,7 +102,7 @@
       display: inline-block;
       text-transform: uppercase;
 
-      :not(:last-child) {
+      &:not(&:last-child) {
          margin-right: 50px;
       }
 
@@ -203,16 +203,15 @@ section:not(#services) article {
       }
    }
 
-   .prefix {
+   .excerpt {
       padding: 35px 0 0 50px;
-
-      .more-link {
-         margin-top: 50px;
-         margin-left: -50px;
-      }
    }
 
-   :nth-child(odd) {
+   .more-link {
+      margin-top: 50px;
+   }
+
+   &:nth-child(odd) {
 
       .content {
          padding-left: 50px;
@@ -225,7 +224,7 @@ section:not(#services) article {
       }
    }
 
-   :nth-child(even) {
+   &:nth-child(even) {
       .thumbnail {
          padding-left: 50px;
          order: 2;
@@ -258,21 +257,21 @@ section:not(#services) article {
       max-width: 400px;
       width: 33%;
 
-      :not(:last-child) {
+      &:not(&:last-child) {
          padding-right: 50px;
       }
 
-      .prefix {
+      .excerpt {
          padding-top: 50px;
          display: flex;
          flex-direction: column;
          justify-content: space-between;
-         min-height: 250px;
-         max-height: 250px;
+         min-height: 150px;
+         max-height: 150px;
       }
 
       .more-link-small,
-      .prefix a {
+      .more-link {
          width: 50px;
          height: 50px;
          min-width: 50px;
@@ -301,4 +300,16 @@ section:not(#services) article {
       padding: 100px;
       width: 100%;
    }
+}
+
+/*Loader*/
+#loading {
+   height: 100vh;
+   width: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: $font-size-secondary;
+   font-family: $font-family-secondary;
+   font-weight: 600;
 }

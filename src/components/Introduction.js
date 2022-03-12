@@ -7,7 +7,7 @@ function Homepage() {
    const [isLoaded, setIsLoaded] = useState(false)
 
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages/2`)
+      axios.get(`https://adm.marek.media/wp-json/wp/v2/posts/26`)
       .then(res => {
          setHomepage(res.data)
          setIsLoaded(true)
@@ -24,12 +24,12 @@ function Homepage() {
             <div className="content">
                <div dangerouslySetInnerHTML={{__html: Homepage.content.rendered}} />
             </div>
-            <a className="more-link" href="#">Kontakt</a>
+            <a className="more-link" href="/#">Kontakt</a>
          </section>
       )
    }
    return (
-      <div>Loading...</div>
+      <div id="loading">Loading...</div>
    )
 }
 

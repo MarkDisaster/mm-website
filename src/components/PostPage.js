@@ -32,7 +32,6 @@ function PostPage() {
          <Fragment>
             <div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>
             <div dangerouslySetInnerHTML={{__html: post.content.rendered}} />
-            <div><Link to='/'>Zpět</Link></div>
          </Fragment> 
       )
    }
