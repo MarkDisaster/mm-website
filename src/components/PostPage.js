@@ -30,8 +30,11 @@ function PostPage() {
    if(isLoaded) {
       return (
          <Fragment>
-            <div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>
-            <div dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+            <article>
+               {/*<div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>*/}
+               <div><h1>{post.title.rendered}</h1></div>
+               <div class="content" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+            </article>
          </Fragment> 
       )
    }

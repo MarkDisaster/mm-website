@@ -27,10 +27,10 @@ function Navigation() {
                   </ul>
                </div>
                <div id="social-media">
-                  <a href="https://github.com/markdisaster" target="_blank">
+                  <a href="https://github.com/markdisaster" target="_blank" rel="noreferrer">
                      <img className="arrow-right" src={GithubIcon} title="Github" alt="Github" />
                   </a>
-                  <a href="https://behance.net/markdisaster" target="_blank">
+                  <a href="https://behance.net/markdisaster" target="_blank" rel="noreferrer">
                      <img className="arrow-right" src={BehanceIcon} title="Behance" alt="Behance" />
                   </a>
                </div>

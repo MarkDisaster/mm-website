@@ -36,12 +36,12 @@ function ProjectItem(props) { //Props jako parametr mi umožní přístup k prop
             <div className="content">
                <header>
                   <h2>
-                     <Link to={`/post/${post.id}`}>{post.title.rendered}</Link>
+                     <Link to={`/article/${post.id}`}>{post.title.rendered}</Link>
                   </h2>
                </header>
                <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
                <div>
-                  <Link className="more-link" to={`/post/${post.id}`}>Přečíst</Link>
+                  <Link className="more-link" to={`/article/${post.id}`}>Přečíst</Link>
                </div>
             </div>
          </article>
