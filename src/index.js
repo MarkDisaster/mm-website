@@ -4,7 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import './styles/main.scss';
 
-/*
+
 import firebase from 'firebase'
 
 // Import the functions you need from the SDKs you need
@@ -26,7 +26,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-*/
+
 
 
 ReactDOM.render(
