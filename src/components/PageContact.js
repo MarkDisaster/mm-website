@@ -1,15 +1,17 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
+import Header from './Header'
+import ContactForm from './ContactForm'
 
-function Page() {
-   const {slug} = useParams()
+function PageContact() {
    const [post, setPost] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
 
-   
+   document.body.className = 'page-contact';
+
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=${slug}`)
+      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=contact`)
       .then(res => {
          setPost(res.data)
          //console.log('slug:' + slug)
@@ -18,14 +20,17 @@ function Page() {
       .catch(err => {
          console.log(err)
       })
-   }, [setPost, slug])
+   }, [setPost])
 
    if(isLoaded) {
       return (
-         
          <>
+            <Header />
             <main>
-               <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
+               <div className="contact-text">
+                  <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
+               </div>
+               <ContactForm />
             </main>
          </> 
       )
@@ -35,4 +40,4 @@ function Page() {
    )
 }
 
-export default Page
+export default PageContact

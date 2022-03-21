@@ -2,7 +2,7 @@ import React, {Fragment, useState, useEffect} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
 
-function PostPage() {
+function PagePost() {
    const {id} = useParams()
    const [post, setPost] = useState([])
    const [img, setImg] = useState([])
@@ -43,4 +43,4 @@ function PostPage() {
    )
 }
 
-export default PostPage
+export default PagePost

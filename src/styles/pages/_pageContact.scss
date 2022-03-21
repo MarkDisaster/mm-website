@@ -1,0 +1,24 @@
+@use "../abstracts"as *;
+
+.page-contact main {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 250px;
+
+   h1 {
+      font-size: $font-size-secondary;
+   }
+
+   .contact-text {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .contact-form {
+      background-color: #0040fe;
+      padding: 50px;
+      min-width: 50%;
+   }
+}

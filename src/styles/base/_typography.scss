@@ -22,7 +22,7 @@ h2 a {
    color: $main-color;
    font-weight: 600;
 
-   :hover {
+   &:hover {
       text-decoration: none;
    }
 }

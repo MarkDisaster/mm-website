@@ -14,7 +14,6 @@ function Homepage() {
       })
       .catch(err => {
          console.log(err)
-         console.log('nepovedlo se')
       })
    }, [setHomepage])
 
@@ -24,7 +23,7 @@ function Homepage() {
             <div className="content">
                <div dangerouslySetInnerHTML={{__html: Homepage.content.rendered}} />
             </div>
-            <a className="more-link" href="/#">Kontakt</a>
+            <a className="more-link" href="/contact">Kontakt</a>
          </section>
       )
    }
