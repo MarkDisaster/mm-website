@@ -1,11 +1,52 @@
 @mixin roundedBorder {
-   border: 3px solid;
-   border-color: $main-color;
-   border-radius: 50%;
+  border: 3px solid;
+  border-color: $main-color;
+  border-radius: 50%;
 }
 
 @mixin fullWidth {
-   min-width: 100%;
-   width: 100%;
-   display: inline-block;
+  min-width: 100%;
+  width: 100%;
+  display: inline-block;
 }
+/*
+@mixin bp-small {
+  @media (min-width: 520px) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+@mixin bp-medium {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin bp-large {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@include bp-small {
+  :root {
+    --fs-small: 1.125rem;
+    --fs-medium: 2.3rem;
+    --fs-large: 3.5rem;
+    --fs-xlarge: 4rem;
+  }
+}
+
+@include bp-medium {
+  :root {
+    --fs-small: 1.125rem;
+    --fs-medium: 2.3rem;
+    --fs-large: 3.5rem;
+    --fs-xlarge: 6.5rem;
+  }
+}
+*/

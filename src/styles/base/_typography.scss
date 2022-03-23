@@ -1,44 +1,57 @@
-@use "../abstracts"as *;
+@use "../abstracts" as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html {
-   font-family: $font-family-primary;
-   font-weight: 400;
+  font-family: $font-family-primary;
+  font-weight: 400;
+}
+
+:hover {
 }
 
 h1 {
-   color: $main-color;
-   font-family: $font-family-secondary;
-   font-size: $font-size-primary;
-   font-weight: 600;
+  color: $main-color;
+  font-family: $font-family-secondary;
+  font-size: $font-size-xlarge;
+  font-weight: 600;
 }
 
 h2,
 h2 a {
-   font-size: $font-size-secondary;
-   font-family: $font-family-secondary;
-   color: $main-color;
-   font-weight: 600;
+  font-size: $font-size-small;
+  font-family: $font-family-secondary;
+  color: $main-color;
+  font-weight: 600;
 
-   &:hover {
-      text-decoration: none;
-   }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 p {
-   font-size: $font-size-tertiary;
-   line-height: 1.6rem;
+  font-size: $font-size-xsmall;
+  line-height: 1.6rem;
 }
 
 a {
-   color: $secondary-color;
-   text-decoration: none;
-   transition: 0.3s;
-   font-weight: 600;
+  color: $secondary-color;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s;
 
-   &:hover {
-      text-decoration: underline;
-   }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  /*margin-block-start: 1rem;
+   margin-block-end: 1rem;*/
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }

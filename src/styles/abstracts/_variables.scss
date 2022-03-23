@@ -1,18 +1,25 @@
 $main-color: #000000;
-$secondary-color: #013CFE;
+$secondary-color: #013cfe;
 
-$tertiary-color: #E7E8EC;
-$quaternary-color: #FFFFFF;
+$tertiary-color: #e7e8ec;
+$quaternary-color: #ffffff;
 
-$font-family-primary: 'Inter',
-sans-serif;
-$font-family-secondary: 'Montserrat',
-sans-serif;
-
-$font-size-primary: 7.5rem;
-$font-size-secondary: 3.3rem;
-$font-size-tertiary: 1.125rem;
+$font-family-primary: "Inter", sans-serif;
+$font-family-secondary: "Montserrat", sans-serif;
 
 $header-height: 150px;
 $full-screen-height: calc(100vh - 150px);
 $max-width: 1200px;
+
+:root {
+  --bp-xsmall: 520px;
+  --bp-small: 960px;
+  --bp-medium: 1024px;
+  --bp-large: 1200px;
+}
+
+$font-size-xlarge: clamp(1.125rem, 10vw, 7rem);
+$font-size-large: clamp(1.125rem, 8vw, 5rem);
+$font-size-medium: clamp(1.125rem, 6.5vw, 5rem);
+$font-size-small: clamp(1.125rem, 5.5vw, 3.1rem);
+$font-size-xsmall: 1rem;

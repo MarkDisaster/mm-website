@@ -27,6 +27,9 @@ function PageContact() {
          <>
             <Header />
             <main>
+               <div className="message">
+                  <h1>Máte zájem o spolupráci?<br/>Kontaktujte mě.</h1>
+               </div>
                <div className="contact-text">
                   <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
                </div>

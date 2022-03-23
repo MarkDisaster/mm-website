@@ -1,6 +1,18 @@
-article .content {
-   margin: 0 auto;
-   padding: 75px 0;
-   max-width: 960px;
-   margin: 0 auto;
+@use "../abstracts" as *;
+
+article {
+  .content {
+    margin: 0 auto;
+    padding: 75px 0;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: $font-size-large;
+  }
+
+  img {
+    width: 100%;
+  }
 }
