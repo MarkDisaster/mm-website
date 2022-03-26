@@ -17,36 +17,36 @@ form {
   h2 {
     color: $quaternary-color;
   }
-}
 
-input,
-textarea,
-button {
-  font-family: $font-family-primary;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: 2px solid #ffffff;
-}
+  input,
+  textarea,
+  button {
+    font-family: $font-family-primary;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #ffffff;
+  }
 
-input,
-textarea {
-  margin-bottom: 10px;
-  width: 100%;
-  color: $main-color;
-}
+  input,
+  textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    color: $main-color;
+  }
 
-textarea {
-  min-height: 100px;
-}
+  textarea {
+    min-height: 100px;
+  }
 
-button {
-  background: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: bold;
+  button {
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
 
-  &:hover {
-    background: #ffffff1a;
+    &:hover {
+      background: #ffffff1a;
+    }
   }
 }
 

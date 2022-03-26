@@ -52,89 +52,37 @@
   position: fixed;
   padding-top: 50px;
   max-width: 1200px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @include bp-medium {
+    height: 90px;
+    padding-top: 35px;
+  }
 }
 
 /*Logo*/
-#logo img {
+#logo svg {
   height: auto;
   width: 125px;
-}
-
-/*Menu*/
-#primary-menu {
-  display: flex;
-  width: calc(100% - 125px);
-  justify-content: center;
-}
-
-#primary-menu-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-
-  #social-media {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-    a:not(:last-child) {
-      margin-right: 15px;
-    }
-
-    img {
-      width: 20px;
-      height: auto;
-    }
-  }
-}
-
-#menu-mobile-toggle {
-  display: none;
-}
-
-#container-items {
-  width: calc(100% - 125px);
-  display: flex;
-  justify-content: center;
-
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    text-transform: uppercase;
-
-    &:not(&:last-child) {
-      margin-right: 50px;
-    }
-
-    a {
-      color: $main-color;
-    }
-
-    a:hover {
-      color: $secondary-color;
-      text-decoration: none;
-    }
-  }
+  margin-top: -12px;
 }
 
 main {
   margin-top: 150px;
   max-width: 1200px;
   width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
+
+  @include bp-medium {
+    margin-top: 90px;
+  }
 }
 
 section {
   float: left;
   width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
 
   > header {
     display: flex;
@@ -162,14 +110,16 @@ section {
   width: $max-width;
   width: 100%;
   padding-top: 50px;
-  float: none;
+  //float: none;
 
   .more-link {
     float: right;
   }
 
-  @include bp-medium {
+  @include bp-large {
     min-height: auto;
+    height: auto;
+    padding-bottom: 75px;
   }
 }
 
@@ -188,7 +138,7 @@ section {
 }
 
 /*Projects*/
-section:not(#services) article {
+section#projects article {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -221,15 +171,16 @@ section:not(#services) article {
 
     @include bp-large {
       margin-top: 50px;
-    }
-
-    @include bp-small {
       width: 100%;
     }
   }
 
   .excerpt {
     padding: 35px 0 0 50px;
+
+    @include bp-large {
+      padding: 25px 0 0 25px;
+    }
   }
 
   .more-link {
@@ -328,6 +279,10 @@ section:not(#services) article {
       font-size: 0.75rem;
     }
   }
+
+  @include bp-large {
+    padding-top: 75px;
+  }
 }
 
 /*Contact*/
@@ -347,6 +302,37 @@ section:not(#services) article {
     background-color: #e7e8ec;
     padding: 100px;
     width: 100%;
+
+    @include bp-large {
+      padding: 50px;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include bp-small {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  .email {
+    padding-left: 50px;
+    padding-top: 50px;
+
+    @include bp-small {
+      padding: 35px 0 50px 0;
+    }
+  }
+
+  @include bp-large {
+    padding: 0;
+  }
+
+  @include bp-small {
   }
 }
 

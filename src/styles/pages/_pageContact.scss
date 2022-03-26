@@ -1,10 +1,10 @@
 @use "../abstracts" as *;
 
-.page-contact main {
+.page-contact main section {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 200px;
+  margin-top: 50px;
   margin-bottom: 150px;
 
   .message {

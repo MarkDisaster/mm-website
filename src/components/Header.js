@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Navigation from './Navigation'
-import Logo from '../assets/images/mm-logo.svg'
+import Logo from './LogoAnimated'
+//import { ReactComponent as LogoAnimated } from '../assets/images/mm-logo-white-animated.svg'
 
 function Header() {
    return (
@@ -9,7 +10,7 @@ function Header() {
          <header id="header">
             <div id="logo">
                <Link to={`/`} >
-                  <img src={Logo} title="Marek Media logo" alt="Marek Media logo"></img>
+                  <Logo />
                </Link>
             </div>
             <Navigation />

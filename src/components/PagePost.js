@@ -30,11 +30,13 @@ function PagePost() {
    if(isLoaded) {
       return (
          <Fragment>
-            <article>
-               {/*<div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>*/}
-               <div><h1>{post.title.rendered}</h1></div>
-               <div class="content" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
-            </article>
+            <section>
+               <article>
+                  {/*<div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>*/}
+                  <div><h1>{post.title.rendered}</h1></div>
+                  <div class="content" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+               </article>
+            </section>
          </Fragment> 
       )
    }

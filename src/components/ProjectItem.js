@@ -29,7 +29,7 @@ function ProjectItem(props) { //Props jako parametr mi umožní přístup k prop
       return(
          <article>
             <div className="thumbnail">
-            <Link to={`/post/${post.id}`} >
+            <Link to={`/article/${post.id}`} >
                <img src={imgUrl} alt={post.title.rendered} />
             </Link>
             </div>
