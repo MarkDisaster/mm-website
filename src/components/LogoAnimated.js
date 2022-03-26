@@ -16,7 +16,7 @@ function LogoAnimated() {
    
    function animation(i) {
       
-      if(stop == 1) 
+      if(stop == 1)
       return;
       
       if (i < 21) {
@@ -29,22 +29,22 @@ function LogoAnimated() {
             animation(++i);
          }, animationSpeed);
       } if( i == 20 ) {
-         setTimeout(function () {
+         timer = setTimeout(function () {
             animation(1);
          }, animationSpeed);
       }
    }
 
    function stopAnimation() {
-      
       stop = 1
       clearTimeout(timer);
       
       for(let i = 0; i < images.length; i++) {
          images[i].style.display = 'none';
       }
-   
+      
       images[20].style.display = 'block';
+      stop = 1
    }
 
    function playAnimation() {
@@ -55,7 +55,7 @@ function LogoAnimated() {
    
    return (
       <>
-         <Logo ref={svgRef} onMouseEnter={playAnimation} onMouseLeave={stopAnimation} />
+         <Logo ref={svgRef} onMouseEnter={playAnimation} onMouseLeave={stopAnimation} onClick={stopAnimation} />
       </>
    )
 }

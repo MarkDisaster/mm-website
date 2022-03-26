@@ -15,12 +15,12 @@ function App() {
     <div className="App">
       <Fragment>
           <Routes>
-            <Route path='/' exact element={<><PageIndex /></>} />
-            <Route path='/:slug' exact element={<><Page /></>} />
+            <Route path='/' exact element={<><Header /><main><PageIndex /></main></>} />
+            <Route path='/:slug' exact element={<><Header /><main><Page /></main></>} />
             <Route path='/article/:id' exact element={<><Header /><main><PagePost /></main></>} />
             <Route path='/projects' exact element={<><Header /><main><Projects /></main></>} />
             <Route path='/services' exact element={<><Header /><main><Services /></main></>} />
-            <Route path='/contact' exact element={<><PageContact /></>} />
+            <Route path='/contact' exact element={<><Header /><main><PageContact /></main></>} />
             {/*<Route path='/post/:id' component={Navigation} /> Od Router v6 component nefunguje, místo toho se používá element*/}
           </Routes>
       </Fragment>

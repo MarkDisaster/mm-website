@@ -47,6 +47,10 @@ function ProjectItem(props) { //Props jako parametr mi umožní přístup k prop
          </article>
       )
    }
-   return <div>{props.post.id}</div>
+   return (
+      <>
+         <div id="loading">Loading...</div>
+      </>
+   )
 }
 export default ProjectItem

@@ -111,7 +111,7 @@ button.active {
 }
 
 #container-items {
-  width: calc(100% - 125px);
+  width: calc(100% - $logo-width);
   display: flex;
   justify-content: center;
 

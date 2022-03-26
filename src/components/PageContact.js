@@ -25,23 +25,22 @@ function PageContact() {
    if(isLoaded) {
       return (
          <>
-            <Header />
-            <main>
-               <section>
-                  <div className="message">
-                     <h1>Máte zájem o spolupráci?<br/>Kontaktujte mě.</h1>
-                  </div>
-                  <div className="contact-text">
-                     <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
-                  </div>
-                  <ContactForm />
-               </section>
-            </main>
+            <section>
+               <div className="message">
+                  <h1>Máte zájem o spolupráci?<br/>Kontaktujte mě.</h1>
+               </div>
+               <div className="contact-text">
+                  <div dangerouslySetInnerHTML={{__html: post[0].content.rendered}} />
+               </div>
+               <ContactForm />
+            </section>
          </> 
       )
    }
    return (
-      <div id="loading">Loading...</div>
+      <>
+         <div id="loading">Loading...</div>
+      </>
    )
 }
 

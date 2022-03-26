@@ -11,15 +11,17 @@ $header-height: 150px;
 $full-screen-height: calc(100vh - 150px);
 $max-width: 1200px;
 
-:root {
-  --bp-xsmall: 520px;
-  --bp-small: 960px;
-  --bp-medium: 1024px;
-  --bp-large: 1200px;
-}
-
 $font-size-xlarge: clamp(1.125rem, 8.5vw, 7rem);
 $font-size-large: clamp(1.125rem, 8vw, 5rem);
 $font-size-medium: clamp(1.125rem, 6.5vw, 5rem);
 $font-size-small: clamp(1.125rem, 5.5vw, 3.1rem);
 $font-size-xsmall: 1rem;
+
+$logo-width: 150px;
+
+/*:root {
+  --bp-xsmall: 520px;
+  --bp-small: 960px;
+  --bp-medium: 1024px;
+  --bp-large: 1200px;
+}*/

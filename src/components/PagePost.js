@@ -1,6 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
+import Header from './Header'
 
 function PagePost() {
    const {id} = useParams()
@@ -29,19 +30,23 @@ function PagePost() {
    
    if(isLoaded) {
       return (
-         <Fragment>
-            <section>
-               <article>
-                  {/*<div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>*/}
-                  <div><h1>{post.title.rendered}</h1></div>
-                  <div class="content" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
-               </article>
-            </section>
-         </Fragment> 
+         <>
+            <Fragment>
+               <section>
+                  <article>
+                     {/*<div><img src={img.media_details.sizes.full.source_url} alt={img.alt_text} /></div>*/}
+                     <div><h1>{post.title.rendered}</h1></div>
+                     <div className="content" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+                  </article>
+               </section>
+            </Fragment>
+         </> 
       )
    }
    return (
-      <div>Loading...</div>
+      <>
+            <div id="Loading">Loading...</div>
+      </>
    )
 }
 

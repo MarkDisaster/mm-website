@@ -10,13 +10,10 @@ function PageIndex() {
 
    return (   
       <>
-      <Header />
-         <main>
-            <Introduction />
-            <Projects />
-            <Services />
-            <ContactHomepage />
-         </main>
+         <Introduction />
+         <Projects />
+         <Services />
+         <ContactHomepage />
       </> 
    )
 }

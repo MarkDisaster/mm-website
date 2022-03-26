@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+#logo svg {
+  height: auto;
+  width: $logo-width;
+  margin-top: -12px;
+}
