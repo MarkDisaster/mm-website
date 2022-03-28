@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+.page-services {
+  #services {
+    @include bp-medium {
+      padding-top: 0;
+    }
+    article {
+      width: calc(50% - 50px);
+      max-width: unset;
+      padding: 0 50px;
+      margin-bottom: 75px;
+      @include borderBlack;
+
+      &:not(&:last-child) {
+        margin-right: 50px;
+
+        @include bp-small {
+          margin-right: 0;
+        }
+      }
+
+      .excerpt {
+        max-height: unset;
+        min-height: unset;
+
+        @include bp-small {
+          padding-top: 25px;
+        }
+      }
+
+      @include bp-small {
+        min-width: unset;
+        width: 100%;
+      }
+    }
+    .content .content {
+      @include bp-large {
+        padding: 50px 0;
+      }
+    }
+    > .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-top: 100px;
+      flex-wrap: wrap;
+    }
+  }
+}

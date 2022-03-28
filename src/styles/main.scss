@@ -273,7 +273,9 @@ section#projects article {
       font-size: 0.75rem;
     }
   }
+}
 
+.page-index #services {
   @include bp-large {
     padding-top: 75px;
   }

@@ -4,8 +4,6 @@ import NavItems from './NavItems'
 
 function Navigation() {
 
-   
-
    function toggleMenu() {
       const toggleMenuButton = document.querySelector('.toggle-menu');
       const toggleMenu = document.querySelector('#primary-menu-container');
@@ -22,10 +20,6 @@ function Navigation() {
             <div id="primary-menu-container">
                <div id="container-items">
                   <ul>
-                     {/*<li><a href="#">test1</a></li>
-                     <li><Link to={`/page/2`}>Přečíst</Link></li>
-                     <li><a href="#">test3</a></li> */}
-
                      {NavItems.map((item, index) => {
                      return <li key={index} className={item.cName}>
                         <Link to={item.path} >/{item.title}/</Link>

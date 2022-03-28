@@ -23,9 +23,15 @@
   flex-direction: column;
   align-items: center;
 }
+
 @mixin nulledHeight {
   width: auto;
   min-width: auto;
+}
+
+@mixin borderBlack {
+  border: 3px solid;
+  border-color: #000000;
 }
 /*
 @mixin bp-small {

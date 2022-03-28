@@ -8,6 +8,10 @@ function Services() {
    const [posts, setPosts] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
 
+   if (window.location.href.indexOf('services') > -1) {
+      document.body.className = 'page-services';
+    }
+
    useEffect(() => {
       axios.get(`https://adm.marek.media/wp-json/wp/v2/posts?categories=6&order=asc`)
       .then(res => {
