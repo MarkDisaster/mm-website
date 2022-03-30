@@ -137,7 +137,7 @@ section#projects article {
   align-items: center;
   align-content: center;
   height: $full-screen-height;
-  //min-height: 780px;
+  min-height: 780px;
   max-height: 780px;
   width: $max-width;
   width: 100%;
@@ -146,10 +146,11 @@ section#projects article {
     margin-top: -150px;
     width: 45%;
 
-    @include bp-large {
+    @include bp-small {
       margin-top: 0;
       padding: 25px 0;
       width: 100%;
+      min-height: unset;
     }
   }
 
@@ -162,7 +163,7 @@ section#projects article {
       height: auto;
     }
 
-    @include bp-large {
+    @include bp-small {
       margin-top: 50px;
       width: 100%;
     }
@@ -171,7 +172,7 @@ section#projects article {
   .excerpt {
     padding: 35px 0 0 50px;
 
-    @include bp-large {
+    @include bp-medium {
       padding: 25px 0 0 25px;
     }
   }
@@ -185,7 +186,7 @@ section#projects article {
       padding-left: 50px;
       order: 2;
 
-      @include bp-large {
+      @include bp-medium {
         padding-left: 0;
       }
     }
@@ -194,7 +195,7 @@ section#projects article {
       padding-right: 50px;
       order: 1;
 
-      @include bp-large {
+      @include bp-small {
         padding-right: 0;
       }
     }
@@ -205,7 +206,7 @@ section#projects article {
       padding-left: 50px;
       order: 2;
 
-      @include bp-large {
+      @include bp-small {
         padding-left: 0;
         order: 1;
       }
@@ -215,16 +216,16 @@ section#projects article {
       padding-right: 50px;
       order: 1;
 
-      @include bp-large {
+      @include bp-small {
         padding-right: 0px;
       }
     }
   }
 
-  @include bp-large {
+  @include bp-small {
     flex-direction: column;
     align-items: flex-start;
-    min-height: auto;
+    min-height: unset;
     height: auto;
     max-height: unset;
   }

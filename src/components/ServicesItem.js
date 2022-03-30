@@ -18,7 +18,7 @@ function ServicesItem(props) { //Props jako parametr mi umožní přístup k pro
                      <Link to={`/services#${post.id}`}>{post.title.rendered}</Link>
                   </h2>
                </header>
-               <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+               <div className="excerpt" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
                <div>
                   <Link className="more-link" to={`/services#${post.id}`}>Více</Link>
                </div>
