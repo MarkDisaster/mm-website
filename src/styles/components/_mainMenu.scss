@@ -9,7 +9,6 @@
   @include bp-medium {
     justify-content: right;
   }
-}
 
 .icon,
 button {
@@ -24,8 +23,7 @@ button {
 
 button {
   background-size: auto 20px;
-
-  @include borderRounded;
+  border: none;
 }
 
 .icon {
@@ -56,6 +54,7 @@ button.active {
   background-image: url("/assets/images/close.svg");
 
   @include borderRoundedWhite;
+}
 }
 
 #primary-menu-container {

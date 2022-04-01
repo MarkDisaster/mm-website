@@ -239,11 +239,16 @@ section#projects article {
   width: 1200px;
   width: 100%;
 
+  @include bp-medium {
+    height: unset;
+    max-height: unset;
+  }
+
   > .content {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-
+    flex-wrap: wrap;
     padding-top: 100px;
   }
 
@@ -251,17 +256,34 @@ section#projects article {
     max-width: 400px;
     width: 33%;
 
+    @include bp-medium {
+      width: 50%;
+      max-width: unset;
+    }
+
+    @include bp-small {
+      width: 100%;
+    }
+
     &:not(&:last-child) {
       padding-right: 50px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
     }
 
     .excerpt {
       padding-top: 50px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 150px;
-      max-height: 150px;
+      justify-content: flex-start;
+      height: calc(100% - 130px);
+      //min-height: 150px;
+      //max-height: 150px;
     }
 
     .more-link-small,

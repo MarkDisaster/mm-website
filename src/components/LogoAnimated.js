@@ -11,7 +11,7 @@ function LogoAnimated() {
    let timer
 
    useEffect(() => {
-      setImages(svgRef.current.children); 
+      setImages(svgRef.current.children, []); 
    })
    
    function animation(i) {

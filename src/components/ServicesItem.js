@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 
 function ServicesItem(props) { //Props jako parametr mi umožní přístup k propereties u potomka komponenty.
    console.log(props)
