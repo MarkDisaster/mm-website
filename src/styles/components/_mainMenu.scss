@@ -9,23 +9,22 @@
   @include bp-medium {
     justify-content: right;
   }
-}
 
-.icon,
-button {
+  .icon, button {
   width: 40px;
   height: 40px;
   margin-top: -15px;
   padding: 0;
-  background-color: unset;
-  background-repeat: no-repeat;
-  background-position: center;
+  
+  @include backgroundCenter;
 }
 
 button {
   background-size: auto 20px;
 
   @include borderRounded;
+  @include backgroundCenter;
+  transition: none;
 }
 
 .icon {
@@ -159,3 +158,6 @@ button.active {
     }
   }
 }
+
+}
+

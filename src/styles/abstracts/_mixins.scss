@@ -1,9 +1,15 @@
 @mixin borderRounded {
-  //background: none;
+  background-color: transparent;
   border: 3px solid;
   border-radius: 50%;
   font-weight: bold;
   border-color: #000000;
+  
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  @include flexCenterVertical;
 }
 
 @mixin borderRoundedWhite {
@@ -24,14 +30,27 @@
   align-items: center;
 }
 
+@mixin flexCenterVertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin nulledHeight {
-  width: auto;
-  min-width: auto;
+  min-height: unset;
+  height: unset;
+  max-height: unset;
 }
 
 @mixin borderBlack {
   border: 3px solid;
   border-color: #000000;
+}
+
+@mixin backgroundCenter {
+  background-color: unset;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /*
 @mixin bp-small {

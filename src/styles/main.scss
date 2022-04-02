@@ -10,30 +10,6 @@
   align-items: center;
 }
 
-.more-link {
-  min-width: 100px;
-  min-height: 100px;
-  width: 100px;
-  height: 100px;
-  border: 3px solid $main-color;
-  border-radius: 50%;
-  display: block;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $main-color;
-  text-decoration: none;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-
-  &:hover {
-    background-color: $secondary-color;
-    color: $quaternary-color;
-    text-decoration: none;
-  }
-}
-
 .App {
   width: 100%;
   max-width: 1200px;
@@ -41,6 +17,24 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+}
+
+
+/*Vlastní třídy*/
+.more-link {
+  color: $main-color;
+  min-width: 100px;
+  min-height: 100px;
+  width: 100px;
+  height: 100px;
+  @include borderRounded;
+  
+
+  &:hover {
+    background-color: $secondary-color;
+    color: $quaternary-color;
+    text-decoration: none;
+  }
 }
 
 /*Header*/
@@ -103,32 +97,33 @@ section {
   width: $max-width;
   width: 100%;
   padding-top: 50px;
-  //float: none;
-
-  .more-link {
-    float: right;
-  }
-
+  
   @include bp-large {
     min-height: auto;
     height: auto;
     padding-bottom: 75px;
   }
+
+  .row {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .row-2 {
+    text-align: right;
+  }
+  
+  .row-3 {
+    text-align: center;
+    padding-right: clamp(0px, 10vw, 6.25rem);
+  }
+
+  .more-link {
+    float: right;
+  }
 }
 
-.row {
-  display: inline-block;
-  width: 100%;
-}
 
-.row-2 {
-  text-align: right;
-}
-
-.row-3 {
-  text-align: center;
-  padding-right: clamp(0px, 10vw, 6.25rem);
-}
 
 /*Projects*/
 section#projects article {
@@ -137,7 +132,7 @@ section#projects article {
   align-items: center;
   align-content: center;
   height: $full-screen-height;
-  //min-height: 780px;
+  min-height: 600px;
   max-height: 780px;
   width: $max-width;
   width: 100%;
@@ -146,7 +141,7 @@ section#projects article {
     margin-top: -150px;
     width: 45%;
 
-    @include bp-large {
+    @include bp-medium {
       margin-top: 0;
       padding: 25px 0;
       width: 100%;
@@ -162,7 +157,7 @@ section#projects article {
       height: auto;
     }
 
-    @include bp-large {
+    @include bp-medium {
       margin-top: 50px;
       width: 100%;
     }
@@ -171,7 +166,7 @@ section#projects article {
   .excerpt {
     padding: 35px 0 0 50px;
 
-    @include bp-large {
+    @include bp-medium {
       padding: 25px 0 0 25px;
     }
   }
@@ -185,7 +180,7 @@ section#projects article {
       padding-left: 50px;
       order: 2;
 
-      @include bp-large {
+      @include bp-medium {
         padding-left: 0;
       }
     }
@@ -194,7 +189,7 @@ section#projects article {
       padding-right: 50px;
       order: 1;
 
-      @include bp-large {
+      @include bp-medium {
         padding-right: 0;
       }
     }
@@ -205,7 +200,7 @@ section#projects article {
       padding-left: 50px;
       order: 2;
 
-      @include bp-large {
+      @include bp-medium {
         padding-left: 0;
         order: 1;
       }
@@ -215,13 +210,13 @@ section#projects article {
       padding-right: 50px;
       order: 1;
 
-      @include bp-large {
+      @include bp-medium {
         padding-right: 0px;
       }
     }
   }
 
-  @include bp-large {
+  @include bp-medium {
     flex-direction: column;
     align-items: flex-start;
     min-height: auto;
@@ -238,17 +233,41 @@ section#projects article {
   width: 1200px;
   width: 100%;
 
+  @include bp-large {
+    @include nulledHeight;
+  }
+
   > .content {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-
+    flex-wrap: wrap;
     padding-top: 100px;
+
+    @include bp-large {
+      padding-top: 0;
+    }
   }
 
   article {
     max-width: 400px;
     width: 33%;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    @include bp-medium {
+      width: 50%;
+      max-width: unset;
+    }
+
+    @include bp-small {
+      width: 100%;
+    }
 
     &:not(&:last-child) {
       padding-right: 50px;
@@ -258,9 +277,8 @@ section#projects article {
       padding-top: 50px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 150px;
-      max-height: 150px;
+      justify-content: flex-start;
+      height: calc(100% - 130px);
     }
 
     .more-link-small,
@@ -293,6 +311,12 @@ section#projects article {
   width: 1200px;
   width: 100%;
   margin-top: -150px;
+
+  @include bp-large {
+    margin-top: 100px;
+
+    @include nulledHeight;
+  }
 
   .contact {
     background-color: #e7e8ec;

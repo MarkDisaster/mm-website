@@ -19,12 +19,16 @@ form {
   }
 
   input,
-  textarea,
-  button {
+  textarea {
     font-family: $font-family-primary;
     padding: 10px 15px;
     font-size: 1rem;
-    border: 2px solid #ffffff;
+    @include borderBlack;
+    border-width: 2px;
+
+    &:focus-visible {
+      outline: 1px solid $main-color;
+    }
   }
 
   input,
@@ -39,13 +43,14 @@ form {
   }
 
   button {
-    background: none;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: bold;
+    height: 100px;
+    width: 100px;
+    color: $quaternary-color;
+    @include borderRounded;
 
     &:hover {
-      background: #ffffff1a;
+     color: $main-color;
+     background: $quaternary-color
     }
   }
 }
