@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 
 function ServicesItem(props) { //Props jako parametr mi umožní přístup k propereties u potomka komponenty.
    console.log(props)
 
-   const [post, setPost] = useState(props.post)
-
-   console.log('props:' + props)
-
-   
+   const [post, setPost] = useState(props.post)   
       return(
          <article>
             <div className="content">
