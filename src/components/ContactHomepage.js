@@ -7,7 +7,7 @@ function Page() {
 
    
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=kontakt-hlavni-strana`)
+      axios.get(`${process.env.REACT_APP_URL}/pages?slug=kontakt-hlavni-strana`)
       .then(res => {
          setPost(res.data)
          //console.log('slug:' + slug)
@@ -30,7 +30,7 @@ function Page() {
       )
    }
    return (
-      <div>Loading...</div>
+      <div id="loading">Loading...</div>
    )
 }
 

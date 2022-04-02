@@ -14,7 +14,7 @@ function ProjectItem(props) { //Props jako parametr mi umožní přístup k prop
    useEffect(() => {
       setPost(props.post)
 
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/media/${post.featured_media}`)
+      axios.get(`${process.env.REACT_APP_URL}/media/${post.featured_media}`)
       .then(res => {
          setImgUrl(res.data.media_details.sizes.full.source_url)
          //setPost(props.post)
@@ -29,19 +29,19 @@ function ProjectItem(props) { //Props jako parametr mi umožní přístup k prop
       return(
          <article>
             <div className="thumbnail">
-            <Link to={`/article/${post.id}`} >
+            <Link to={`/clanek/${post.id}`} >
                <img src={imgUrl} alt={post.title.rendered} />
             </Link>
             </div>
             <div className="content">
                <header>
                   <h2>
-                     <Link to={`/article/${post.id}`}>{post.title.rendered}</Link>
+                     <Link to={`/clanek/${post.id}`}>{post.title.rendered}</Link>
                   </h2>
                </header>
                <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
                <div>
-                  <Link className="more-link" to={`/article/${post.id}`}>Přečíst</Link>
+                  <Link className="more-link" to={`/clanek/${post.id}`}>Přečíst</Link>
                </div>
             </div>
          </article>

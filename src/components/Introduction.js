@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
-
 function Homepage() {
    const [Homepage, setHomepage] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
 
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/posts/26`)
+      axios.get(`${process.env.REACT_APP_URL}/posts/26`)
       .then(res => {
          setHomepage(res.data)
          setIsLoaded(true)
@@ -23,7 +22,7 @@ function Homepage() {
             <div className="content">
                <div dangerouslySetInnerHTML={{__html: Homepage.content.rendered}} />
             </div>
-            <a className="more-link" href="/contact">Kontakt</a>
+            <a className="more-link" href="/kontakt">Kontakt</a>
          </section>
       )
    }

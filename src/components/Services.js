@@ -8,12 +8,12 @@ function Services() {
    const [posts, setPosts] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
 
-   if (window.location.href.indexOf('services') > -1) {
+   if (window.location.href.indexOf('sluzby') > -1) {
       document.body.className = 'page-services';
     }
 
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/posts?categories=6&order=asc`)
+      axios.get(`${process.env.REACT_APP_URL}/posts?categories=6&order=asc`)
       .then(res => {
          setPosts(res.data)
          setIsLoaded(true)
@@ -29,7 +29,7 @@ if(isLoaded) {
          <section id="services">
             <header>
                <img src={ArrowRight} alt="Odrážka Služby" />
-               <a href="/services">Služby</a>
+               <a href="/sluzby">Služby</a>
             </header>
             <div className="content">
                {posts.map(post => (

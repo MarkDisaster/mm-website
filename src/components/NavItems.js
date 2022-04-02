@@ -1,17 +1,17 @@
 const NavItems = [
    {
       title: 'Projekty',
-      path: '/projects',
+      path: '/projekty',
       cName: 'nav-item'
    },
    {
       title: 'Služby',
-      path: '/services',
+      path: '/sluzby',
       cName: 'nav-item'
    },
    {
       title: 'Kontakt',
-      path: '/contact',
+      path: '/kontakt',
       cName: 'nav-item'
    }
 ]

@@ -10,12 +10,12 @@ function ServicesItem(props) { //Props jako parametr mi umožní přístup k pro
             <div className="content">
                <header>
                   <h2>
-                     <Link to={`/services#${post.id}`}>{post.title.rendered}</Link>
+                     <Link to={`/sluzby#${post.id}`}>{post.title.rendered}</Link>
                   </h2>
                </header>
                <div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
                <div>
-                  <Link className="more-link" to={`/services#${post.id}`}>Více</Link>
+                  <Link className="more-link" to={`/sluzby#${post.id}`}>Více</Link>
                </div>
             </div>
          </article>

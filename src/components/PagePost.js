@@ -1,7 +1,6 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
-import Header from './Header'
 
 function PagePost() {
    const {id} = useParams()
@@ -11,12 +10,12 @@ function PagePost() {
 
 
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/posts/${id}`)
+      axios.get(`${process.env.REACT_APP_URL}/posts/${id}`)
       .then(res => {
          setPost(res.data)
 
          //console.log(res.data.featured_media)
-         axios.get(`https://adm.marek.media/wp-json/wp/v2/media/${res.data.featured_media}`).then(res => {
+         axios.get(`${process.env.REACT_APP_URL}/media/${res.data.featured_media}`).then(res => {
          //console.log(res.data)
          setImg(res.data)
          setIsLoaded(true)

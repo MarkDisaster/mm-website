@@ -9,7 +9,7 @@ function Navigation() {
       const toggleMenu = document.querySelector('#primary-menu-container');
 
       toggleMenuButton.classList.toggle('active');
-      toggleMenu.classList.toggle('active');
+      toggleMenu.classList.toggle('active');     
    }
    return (
       <>
@@ -22,7 +22,7 @@ function Navigation() {
                   <ul>
                      {NavItems.map((item, index) => {
                      return <li key={index} className={item.cName}>
-                        <Link to={item.path} >/{item.title}/</Link>
+                        <Link to={item.path} onClick={toggleMenu}>/{item.title}/</Link>
                      </li>
                   })}
                   </ul>

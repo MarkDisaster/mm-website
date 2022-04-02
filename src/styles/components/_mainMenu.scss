@@ -15,6 +15,7 @@
   height: 40px;
   margin-top: -15px;
   padding: 0;
+  border: none;
   
   @include backgroundCenter;
 }
@@ -22,7 +23,6 @@
 button {
   background-size: auto 20px;
 
-  @include borderRounded;
   @include backgroundCenter;
   transition: none;
 }
