@@ -50,7 +50,7 @@
 */
 
 .page-services {
-  
+
   #services {
     padding-bottom: 150px;
     
@@ -67,6 +67,7 @@
 
         @include bp-small {
           width: 100%;
+          padding-right: 0;
         }
     }
   }
