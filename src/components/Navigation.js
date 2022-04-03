@@ -15,7 +15,7 @@ function Navigation() {
       <>
          <nav id="primary-menu">
             <div id="menu-mobile-toggle">
-               <button className="toggle-menu" onClick={toggleMenu}></button>
+               <button type="submit" className="toggle-menu" onClick={toggleMenu}></button>
             </div>
             <div id="primary-menu-container">
                <div id="container-items">

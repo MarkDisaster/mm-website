@@ -34,6 +34,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 @mixin nulledHeight {
@@ -45,6 +52,11 @@
 @mixin borderBlack {
   border: 3px solid;
   border-color: #000000;
+}
+
+@mixin borderBlue {
+  border: 3px solid;
+  border-color: #013cfe;
 }
 
 @mixin backgroundCenter {

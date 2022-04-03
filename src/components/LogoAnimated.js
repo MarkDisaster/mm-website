@@ -6,7 +6,7 @@ function LogoAnimated() {
    const [images, setImages] = useState([])
    const svgRef = useRef()
 
-   const animationSpeed = 800
+   const animationSpeed = 600
    let stop = 0
    let timer
 

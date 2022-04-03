@@ -37,6 +37,31 @@
   }
 }
 
+.tech {
+  list-style-type: none;
+  padding-inline-start: 0;
+  cursor: default;
+
+  @include flexRow;
+
+  li {
+    margin: 0 10px 10px 0;
+    border-radius: 25px;
+    padding: 2px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    @include borderBlue;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $tertiary-color;
+
+      @include borderBlack;
+    }
+  }
+}
+
 /*Header*/
 #header {
   height: $header-height;
@@ -252,6 +277,7 @@ section#projects article {
   article {
     max-width: 400px;
     width: 33%;
+    padding-right: 50px;
 
     .content {
       display: flex;
@@ -267,10 +293,6 @@ section#projects article {
 
     @include bp-small {
       width: 100%;
-    }
-
-    &:not(&:last-child) {
-      padding-right: 50px;
     }
 
     .excerpt {
