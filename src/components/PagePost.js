@@ -45,7 +45,7 @@ function PagePost() {
    }
    return (
       <>
-            <div id="Loading">Loading...</div>
+            <div id="loading">Loading...</div>
       </>
    )
 }

@@ -301,6 +301,10 @@ section#projects article {
       flex-direction: column;
       justify-content: flex-start;
       height: calc(100% - 130px);
+
+      @include bp-medium {
+        padding-top: 25px;
+      }
     }
 
     .more-link-small,
