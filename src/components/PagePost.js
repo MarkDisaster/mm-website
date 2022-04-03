@@ -7,6 +7,7 @@ function PagePost() {
    const [post, setPost] = useState([])
    const [img, setImg] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
+   
 
 
    useEffect(() => {

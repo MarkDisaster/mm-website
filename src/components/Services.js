@@ -36,7 +36,7 @@ if(isLoaded) {
             </header>
             <div className="content">
                {posts.map(post => (
-                  <ServicesItem key={post.id} post={post} />
+                  <ServicesItem key={post.slug} post={post} />
                ))}
             </div>
          </section>

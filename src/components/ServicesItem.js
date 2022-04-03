@@ -30,7 +30,7 @@ function ServicesItem(props) { //Props jako parametr mi umožní přístup k pro
             <div className="content">
                <header>
                   <h2 id={post.id}>
-                     <Link to={`/sluzby#${post.id}`}>{post.title.rendered}</Link>
+                     <Link to={`/sluzby#${post.slug}`}>{post.title.rendered}</Link>
                   </h2>
                </header>
 
