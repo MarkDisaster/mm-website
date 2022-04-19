@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-.page-services {
+/*.page-services {
   #services {
     @include bp-medium {
       padding-top: 0;
@@ -34,7 +34,7 @@
         width: 100%;
       }
     }
-    .content .content {
+    .content {
       @include bp-large {
         padding: 50px 0;
       }
@@ -43,8 +43,33 @@
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      padding-top: 100px;
       flex-wrap: wrap;
+    }
+  }
+}
+*/
+
+.page-services {
+
+  #services {
+    padding-bottom: 150px;
+    
+    @include nulledHeight;
+
+    > .content {
+        padding-top: 0;
+    }
+
+    article {
+        width: 50%;
+        max-width: unset;
+        padding-right: 80px;
+
+        @include bp-small {
+          width: 100%;
+          padding-right: 0;
+          padding-bottom: 35px;
+        }
     }
   }
 }

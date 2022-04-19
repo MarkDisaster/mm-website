@@ -9,7 +9,7 @@ function Page() {
 
    
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=${slug}`)
+      axios.get(`${process.env.REACT_APP_URL}/pages?slug=${slug}`)
       .then(res => {
          setPost(res.data)
          //console.log('slug:' + slug)

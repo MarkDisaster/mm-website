@@ -1,25 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
+
+
+
+
+
 
 function ServicesItem(props) { //Props jako parametr mi umožní přístup k propereties u potomka komponenty.
    console.log(props)
-
    const [post, setPost] = useState(props.post)
 
-   console.log('props:' + props)
+   function renderContent() {
+      if (window.location.href.indexOf('sluzby') > -1) {
+         return (<div className="excerpt" dangerouslySetInnerHTML={{__html: post.content.rendered}} />);
+      } else {
+         return (<div className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />);
+      }
+   }
 
+   function renderMoreButton() {
+      if (window.location.href.indexOf('sluzby') > -1) {
+      } else {
+         return (<Link className="more-link" to={`/sluzby#${post.id}`}>Více</Link>);
+      }
+   }
    
       return(
          <article>
             <div className="content">
                <header>
-                  <h2>
-                     <Link to={`/services#${post.id}`}>{post.title.rendered}</Link>
+                  <h2 id={post.id}>
+                     <Link to={`/sluzby#${post.slug}`}>{post.title.rendered}</Link>
                   </h2>
                </header>
-               <div className="excerpt" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+
+               {renderContent()}
+               
                <div>
-                  <Link className="more-link" to={`/services#${post.id}`}>Více</Link>
+                  {renderMoreButton()}
+                  
                </div>
             </div>
          </article>

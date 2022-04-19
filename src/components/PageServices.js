@@ -4,19 +4,16 @@ import ServicesItem from './ServicesItem'
 import ArrowRight from '../assets/images/arrow-right.svg'
 
 
-function Services() {
+function PageServices() {
    const [posts, setPosts] = useState([])
    const [isLoaded, setIsLoaded] = useState(false)
-   
-   let perPage = 3;
 
    if (window.location.href.indexOf('sluzby') > -1) {
       document.body.className = 'page-services';
-      perPage = 9;
     }
 
    useEffect(() => {
-      axios.get(`${process.env.REACT_APP_URL}/posts?categories=6&order=asc&per_page=${perPage}`)
+      axios.get(`${process.env.REACT_APP_URL}/posts?categories=6&order=asc`)
       .then(res => {
          setPosts(res.data)
          setIsLoaded(true)
@@ -36,7 +33,7 @@ if(isLoaded) {
             </header>
             <div className="content">
                {posts.map(post => (
-                  <ServicesItem key={post.slug} post={post} />
+                  <ServicesItem key={post.id} post={post} />
                ))}
             </div>
          </section>
@@ -48,4 +45,4 @@ return (
    <div id="loading">Loading...</div>
 )
 }
-export default Services
+export default PageServices

@@ -32,15 +32,16 @@ p {
   line-height: 1.6rem;
 }
 
-a {
+a, button {
   color: $secondary-color;
   text-decoration: none;
   font-weight: 600;
   transition: 0.4s;
+  cursor: pointer;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
 ul {

@@ -1,7 +1,5 @@
 import React, {Fragment, useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
 import axios from 'axios'
-import Header from './Header'
 import ContactForm from './ContactForm'
 
 function PageContact() {
@@ -11,7 +9,7 @@ function PageContact() {
    document.body.className = 'page-contact';
 
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/pages?slug=contact`)
+      axios.get(`${process.env.REACT_APP_URL}/pages?slug=contact`)
       .then(res => {
          setPost(res.data)
          //console.log('slug:' + slug)

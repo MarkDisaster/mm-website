@@ -9,7 +9,7 @@ function Projects() {
    const [isLoaded, setIsLoaded] = useState(false)
 
    useEffect(() => {
-      axios.get(`https://adm.marek.media/wp-json/wp/v2/posts?categories=2`)
+      axios.get(`${process.env.REACT_APP_URL}/posts?categories=2`)
       .then(res => {
          setPosts(res.data)
          setIsLoaded(true)
@@ -25,7 +25,7 @@ if(isLoaded) {
          <section id="projects">
             <header>
                <img src={ArrowRight} alt="Odrážka Projekty"/>
-               <a href="/projects">Projekty</a>
+               <a href="/projekty">Projekty</a>
             </header>
             <div className="content">
                {posts.map(post => (

@@ -10,22 +10,25 @@
   align-items: center;
 }
 
+.App {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+/*Vlastní třídy*/
 .more-link {
+  color: $main-color;
   min-width: 100px;
   min-height: 100px;
   width: 100px;
   height: 100px;
-  border: 3px solid $main-color;
-  border-radius: 50%;
-  display: block;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $main-color;
-  text-decoration: none;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+  @include borderRounded;
+  
 
   &:hover {
     background-color: $secondary-color;
@@ -34,13 +37,29 @@
   }
 }
 
-.App {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
+.tech {
+  list-style-type: none;
+  padding-inline-start: 0;
+  cursor: default;
+
+  @include flexRow;
+
+  li {
+    margin: 0 10px 10px 0;
+    border-radius: 25px;
+    padding: 2px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    @include borderBlue;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $tertiary-color;
+
+      @include borderBlack;
+    }
+  }
 }
 
 /*Header*/
@@ -103,32 +122,33 @@ section {
   width: $max-width;
   width: 100%;
   padding-top: 50px;
-  //float: none;
-
-  .more-link {
-    float: right;
-  }
-
+  
   @include bp-large {
     min-height: auto;
     height: auto;
     padding-bottom: 75px;
   }
+
+  .row {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .row-2 {
+    text-align: right;
+  }
+  
+  .row-3 {
+    text-align: center;
+    padding-right: clamp(0px, 10vw, 6.25rem);
+  }
+
+  .more-link {
+    float: right;
+  }
 }
 
-.row {
-  display: inline-block;
-  width: 100%;
-}
 
-.row-2 {
-  text-align: right;
-}
-
-.row-3 {
-  text-align: center;
-  padding-right: clamp(0px, 10vw, 6.25rem);
-}
 
 /*Projects*/
 section#projects article {
@@ -137,7 +157,7 @@ section#projects article {
   align-items: center;
   align-content: center;
   height: $full-screen-height;
-  min-height: 780px;
+  min-height: 600px;
   max-height: 780px;
   width: $max-width;
   width: 100%;
@@ -146,11 +166,10 @@ section#projects article {
     margin-top: -150px;
     width: 45%;
 
-    @include bp-small {
+    @include bp-medium {
       margin-top: 0;
       padding: 25px 0;
       width: 100%;
-      min-height: unset;
     }
   }
 
@@ -163,7 +182,7 @@ section#projects article {
       height: auto;
     }
 
-    @include bp-small {
+    @include bp-medium {
       margin-top: 50px;
       width: 100%;
     }
@@ -195,7 +214,7 @@ section#projects article {
       padding-right: 50px;
       order: 1;
 
-      @include bp-small {
+      @include bp-medium {
         padding-right: 0;
       }
     }
@@ -206,7 +225,7 @@ section#projects article {
       padding-left: 50px;
       order: 2;
 
-      @include bp-small {
+      @include bp-medium {
         padding-left: 0;
         order: 1;
       }
@@ -216,16 +235,16 @@ section#projects article {
       padding-right: 50px;
       order: 1;
 
-      @include bp-small {
+      @include bp-medium {
         padding-right: 0px;
       }
     }
   }
 
-  @include bp-small {
+  @include bp-medium {
     flex-direction: column;
     align-items: flex-start;
-    min-height: unset;
+    min-height: auto;
     height: auto;
     max-height: unset;
   }
@@ -239,9 +258,8 @@ section#projects article {
   width: 1200px;
   width: 100%;
 
-  @include bp-medium {
-    height: unset;
-    max-height: unset;
+  @include bp-large {
+    @include nulledHeight;
   }
 
   > .content {
@@ -250,11 +268,23 @@ section#projects article {
     justify-content: flex-start;
     flex-wrap: wrap;
     padding-top: 100px;
+
+    @include bp-large {
+      padding-top: 0;
+    }
   }
 
   article {
     max-width: 400px;
     width: 33%;
+    padding-right: 50px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+    }
 
     @include bp-medium {
       width: 50%;
@@ -265,25 +295,16 @@ section#projects article {
       width: 100%;
     }
 
-    &:not(&:last-child) {
-      padding-right: 50px;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
     .excerpt {
       padding-top: 50px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       height: calc(100% - 130px);
-      //min-height: 150px;
-      //max-height: 150px;
+
+      @include bp-medium {
+        padding-top: 25px;
+      }
     }
 
     .more-link-small,
@@ -316,6 +337,12 @@ section#projects article {
   width: 1200px;
   width: 100%;
   margin-top: -150px;
+
+  @include bp-large {
+    margin-top: 100px;
+
+    @include nulledHeight;
+  }
 
   .contact {
     background-color: #e7e8ec;

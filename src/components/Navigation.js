@@ -9,20 +9,20 @@ function Navigation() {
       const toggleMenu = document.querySelector('#primary-menu-container');
 
       toggleMenuButton.classList.toggle('active');
-      toggleMenu.classList.toggle('active');
+      toggleMenu.classList.toggle('active');     
    }
    return (
       <>
          <nav id="primary-menu">
             <div id="menu-mobile-toggle">
-               <button className="toggle-menu" onClick={toggleMenu}></button>
+               <button type="submit" className="toggle-menu" onClick={toggleMenu}></button>
             </div>
             <div id="primary-menu-container">
                <div id="container-items">
                   <ul>
                      {NavItems.map((item, index) => {
                      return <li key={index} className={item.cName}>
-                        <Link to={item.path} >/{item.title}/</Link>
+                        <Link to={item.path} onClick={toggleMenu}>/{item.title}/</Link>
                      </li>
                   })}
                   </ul>
