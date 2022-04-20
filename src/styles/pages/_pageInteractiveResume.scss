@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
 @function makelongshadow($secondary-color) {
   $val: 0px 0px $secondary-color;
   @for $i from 1 through 1500 {
@@ -23,91 +25,244 @@
   }
 }
 
-body {
+$font-family-primary: 'Nunito Sans', sans-serif;
+
+.page-resume {
   overflow-x: hidden;
   background-color: $secondary-color;
-}
 
-#root .App {
-  max-width: unset;
-}
-
-.page {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.page-1 {
-  height: 100vh;
-  padding: 100px;
-  padding-bottom: 250px;
-  text-align: center;
-  overflow: hidden;
-  justify-content: center;
-
-  .header-container {
-    animation: down-to-center 1s forwards;
-    margin-left: -100vw;
-    margin-bottom: -100vw;
-    //transition: all 5s ease-in-out;
-    //animation-fill-mode: forwards;
-  }
-
-  .header-container.center {
-    margin-left: 0;
-    margin-bottom: 0;
-  }
-
-
-  h1,
-  h2 {
-    line-height: 1;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  h1 {
-    font-size: 10rem;
-    color: #03fcfc;
-    @include longshadow(darken($secondary-color, 8%));
-    margin-left: -200px;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-left: -20px;
+  h1, h2, div, p {
+    font-family: $font-family-primary;
     color: $quaternary-color;
   }
+  
 
-  h1:nth-child(2) {
-    margin-left: 200px;
-    @include longshadow(darken($secondary-color, 11%));
+  #root .App {
+    max-width: unset;
   }
-}
-
-.page-2 {
-  max-width: 960px;
-
-  .header {
-    h2 {
-      font-size: 5rem;
-      color: #03fcfc;
-          font-weight: 800;
-          font-style: italic;
+  
+  .page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .page-1 {
+    height: calc(100vh + 30px);
+    padding: 100px;
+    padding-bottom: 250px;
+    text-align: center;
+    overflow: hidden;
+    justify-content: center;
+  
+    .header-container {
+      animation: down-to-center 1s forwards;
+      margin-left: -100vw;
+      margin-bottom: -100vw;
+      //transition: all 5s ease-in-out;
+      //animation-fill-mode: forwards;
     }
+  
+    .header-container.center {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  
+  
+    h1,
+    h2 {
+      line-height: 1;
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  
+    h1 {
+      font-size: 13rem;
+      color: #03fcfc;
+      @include longshadow(darken($secondary-color, 8%));
+      margin-left: -200px;
+    }
+  
+    h2 {
+      font-size: 4rem;
+      margin-left: 25px;
+      color: $quaternary-color;
+    }
+  
+    h1:nth-child(2) {
+      margin-left: 200px;
+      @include longshadow(darken($secondary-color, 11%));
+    }
+  }
+
+  .line {
+    width: 100%;
+    margin-top: -15px;
+  }
+  
+  .page-2 {
+    max-width: 1200px;
+    margin-top: 100px;
+  
+    .header {
+      display: inline-block;
+
+      h2 {
+        font-size: 6rem;
+        line-height: 5.2rem;
+        color: #03fcfc;
+        font-weight: 900;
+        font-style: italic;
+      }
+  
+      hr {
+        margin-left: 50px;
+        margin-top: 8px;
+      }
+    }
+
     hr {
       width: 100%;
       height: 15px;
-      margin-left: 50px;
-      background-color: #ffffff;
+      background-color: $quaternary-color;;
+      border: none;
+    }
+
+    .border-rounded {
+      border: 11px solid $quaternary-color;
+      border-radius: 50%;
+    }
+
+    .born-in {
+      display: flex;
+      flex-direction: row;
+    }
+  
+   .calendar {
+      width: 250px;
+      height: auto;
+      margin-left: 150px;
+    }
+
+    .lives-in {
+      width: 100%;
+
+      .header {
+        position: absolute;
+        margin: 200px 0px 0px 250px;
+        //margin: 18.5% 0 0 24%;
+      }
+
+      .content {
+        position: absolute;
+        margin: 370px 0 0 390px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2.2rem;
+        font-weight: 800;
+      }
+
+      .map {
+        display: block;
+        width: 1150px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .map-pin {
+        width: 50px;
+        height: auto;
+        margin-top: 7px;
+      }
+    }
+
+    .experience {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 150px;
+    }
+
+    .timeline {
+      width: 100%;
+      margin-top: 200px;
+
+      .items {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-evenly;
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
+
+      .item:nth-child(odd) {
+          margin-top: -110px
+
+      }
+      .item:nth-child(even) {
+          margin-top: -32px
+      }
+
+      .point {
+        background-color: $quaternary-color;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid #013cfe;
+      }
+    }
+
+    .apps-skills {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 150px;
+      width: 100%;
+
+      .content {
+        margin-top: 75px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 425px;
+        padding-left: 25px;
+      }
+
+      .apps .icon {
+        width: 140px;
+        height: auto;
+        margin: 0 45px 45px 0px;
+      }
+
+      .container:nth-child(odd) .icon {
+        float: right;
+      }
+
+      .conteiner:nth-child(even) .icon {
+        float: left;
+      }
+
+      .skills {
+
+        .icon {
+          width: auto;
+          height: 60px;
+          margin: 0 20px 20px 0;
+        }
+
+        .javascript {
+          width: 50px;
+        }
+
+        .jquery {
+          width: 140px;
+        }
+      }
     }
   }
-
-  .born-in img {
-    width: 350px;
-    height: auto;
-  }
 }
+
