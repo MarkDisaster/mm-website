@@ -17,6 +17,10 @@ import javascript from '../assets/images/resume/javascript.svg';
 import jquery from '../assets/images/resume/jquery.svg';
 import php from '../assets/images/resume/php.svg';
 import mysql from '../assets/images/resume/mysql.svg';
+import wordpress from '../assets/images/resume/wordpress.svg';
+import react from '../assets/images/resume/react.svg';
+import sass from '../assets/images/resume/sass.svg';
+import git from '../assets/images/resume/git.svg';
 
 function PageInteractiveResume() {
 
@@ -203,6 +207,50 @@ function PageInteractiveResume() {
                      <Zoom>
                         <img src={mysql} className="icon" alt="MySQL" />
                      </Zoom>
+                     <Zoom>
+                        <img src={wordpress} className="icon" alt="Wordpress" />
+                     </Zoom>
+                     <Zoom>
+                        <img src={react} className="icon" alt="React" />
+                     </Zoom>
+                     <Zoom>
+                        <img src={sass} className="icon" alt="Sass" />
+                     </Zoom>
+                     <Zoom>
+                        <img src={git} className="icon" alt="Git" />
+                     </Zoom>
+                  </div>
+               </div>
+            </div>
+            <div className="projects">
+               <div className="header">
+                  <Fade left>
+                     <h2>Projects</h2>
+                  </Fade>
+                  <Fade left>
+                     <hr />
+                  </Fade>
+               </div>
+               <div className="content">
+                  <div className="project">
+                     <div className="header">Web Nemocnice Jindřichův Hradec</div>
+                     <div className="hr">&nbsp;</div>
+                     <div className="content">Webová prezentace Nemocnice Jindřichův Hradec ve Wordpressu. UX / UI. Pravidelná údržba a rozvoj.</div>
+                  </div>
+                  <div className="project">
+                     <div className="header">Web kardiologické<br />ambulance</div>
+                     <div className="hr">&nbsp;</div>
+                     <div className="content">Onepage webová prezentace kardiologická ambulance ve Wordpressu.</div>
+                  </div>
+                  <div className="project">
+                     <div className="header">Intranet Nemocnice JH</div>
+                     <div className="hr">&nbsp;</div>
+                     <div className="content">Intranet postavený na Wordpressu. Pravidelná údržba a rozšiřování funkcí. Vytváření a úpravy pluginů.</div>
+                  </div>
+                  <div className="project">
+                     <div className="header">Portfolio v Reactu</div>
+                     <div className="hr">&nbsp;</div>
+                     <div className="content">Vytvoření vlastního webu. Wordpress backend, frontend v Reactu. Práce s daty pomocí REST API.</div>
                   </div>
                </div>
             </div>

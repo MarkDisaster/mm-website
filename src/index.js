@@ -26,8 +26,8 @@ firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 */
+
 
 ReactDOM.render(
   <Router>

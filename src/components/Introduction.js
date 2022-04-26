@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 function Homepage() {
@@ -7,20 +7,20 @@ function Homepage() {
 
    useEffect(() => {
       axios.get(`${process.env.REACT_APP_URL}/posts/26`)
-      .then(res => {
-         setHomepage(res.data)
-         setIsLoaded(true)
-      })
-      .catch(err => {
-         console.log(err)
-      })
+         .then(res => {
+            setHomepage(res.data)
+            setIsLoaded(true)
+         })
+         .catch(err => {
+            console.log(err)
+         })
    }, [setHomepage])
 
-   if(isLoaded) {
+   if (isLoaded) {
       return (
          <section id="introduction">
             <div className="content">
-               <div dangerouslySetInnerHTML={{__html: Homepage.content.rendered}} />
+               <div dangerouslySetInnerHTML={{ __html: Homepage.content.rendered }} />
             </div>
             <a className="more-link" href="/kontakt">Kontakt</a>
          </section>

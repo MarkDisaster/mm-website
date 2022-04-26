@@ -263,6 +263,51 @@ $font-family-primary: 'Nunito Sans', sans-serif;
         }
       }
     }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 980px;
+        margin-left: 150px;
+      }
+
+      .project {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        flex: 0 0 50%;
+        padding-top: 60px;
+        padding-right: 150px;
+
+        .header {
+          width: 100%;
+          font-size: 1.8rem;
+          font-weight: 800;
+          padding-bottom: 10px;
+        }
+
+        .content {
+          //display: grid;
+          //grid-template-columns: 50% 50%;
+          width: calc(100% - 9px);
+          padding-left: 20px;
+          font-size: 1.2rem;
+          font-weight: 800;
+        }
+      }
+
+      .hr {
+        background: #ffffff;
+        width: 3px;
+        margin-left: 6px;
+      }
+    }
   }
 }
 
