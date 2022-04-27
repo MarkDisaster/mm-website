@@ -6,6 +6,9 @@ import calendar from '../assets/images/resume/calendar.svg';
 import map from '../assets/images/resume/map-czech-republic.svg';
 import mapPin from '../assets/images/resume/map-pin.svg';
 
+import checkboxBox from '../assets/images/resume/checkbox-box.svg';
+import checkboxCheck from '../assets/images/resume/checkbox-check.svg';
+
 import visualStudio from '../assets/images/resume/visualstudio.svg';
 import illustrator from '../assets/images/resume/illustrator.svg';
 import photoshop from '../assets/images/resume/photoshop.svg';
@@ -21,6 +24,10 @@ import wordpress from '../assets/images/resume/wordpress.svg';
 import react from '../assets/images/resume/react.svg';
 import sass from '../assets/images/resume/sass.svg';
 import git from '../assets/images/resume/git.svg';
+
+import mail from '../assets/images/resume/mail.svg';
+import phone from '../assets/images/resume/phone.svg';
+import user from '../assets/images/resume/user.svg';
 
 function PageInteractiveResume() {
 
@@ -90,12 +97,18 @@ function PageInteractiveResume() {
                   </Fade>
                </div>
                <div className="header header-2">
+                  <Zoom>
+                     <div class="checkbox">
+                        <img src={checkboxBox} class="box" />
+                        <div class="fade">
+                           <img src={checkboxCheck} class="checked" />
+                        </div>
+                     </div>
+                  </Zoom>
                   <Fade left>
                      <h2>English</h2>
                   </Fade>
-                  <Fade left>
-                     <hr />
-                  </Fade>
+
                </div>
                <div className="timeline">
                   <Fade left>
@@ -233,28 +246,49 @@ function PageInteractiveResume() {
                </div>
                <div className="content">
                   <div className="project">
-                     <div className="header">Web Nemocnice Jindřichův Hradec</div>
-                     <div className="hr">&nbsp;</div>
-                     <div className="content">Webová prezentace Nemocnice Jindřichův Hradec ve Wordpressu. UX / UI. Pravidelná údržba a rozvoj.</div>
+                     <Zoom><div className="header">Web Nemocnice Jindřichův Hradec</div></Zoom>
+                     <Fade down><div className="hr">&nbsp;</div></Fade>
+                     <Zoom><div className="content">Webová prezentace Nemocnice Jindřichův Hradec ve Wordpressu. UX / UI. Pravidelná údržba a rozvoj.</div></Zoom>
                   </div>
                   <div className="project">
-                     <div className="header">Web kardiologické<br />ambulance</div>
-                     <div className="hr">&nbsp;</div>
-                     <div className="content">Onepage webová prezentace kardiologická ambulance ve Wordpressu.</div>
+                     <Zoom><div className="header">Web kardiologické<br />ambulance</div></Zoom>
+                     <Fade down><div className="hr">&nbsp;</div></Fade>
+                     <Zoom><div className="content">Onepage webová prezentace kardiologická ambulance ve Wordpressu.</div></Zoom>
                   </div>
                   <div className="project">
-                     <div className="header">Intranet Nemocnice JH</div>
-                     <div className="hr">&nbsp;</div>
-                     <div className="content">Intranet postavený na Wordpressu. Pravidelná údržba a rozšiřování funkcí. Vytváření a úpravy pluginů.</div>
+                     <Zoom><div className="header">Intranet Nemocnice JH</div></Zoom>
+                     <Fade down><div className="hr">&nbsp;</div></Fade>
+                     <Zoom><div className="content">Intranet postavený na Wordpressu. Pravidelná údržba a rozšiřování funkcí. Vytváření a úpravy pluginů.</div></Zoom>
                   </div>
                   <div className="project">
-                     <div className="header">Portfolio v Reactu</div>
-                     <div className="hr">&nbsp;</div>
-                     <div className="content">Vytvoření vlastního webu. Wordpress backend, frontend v Reactu. Práce s daty pomocí REST API.</div>
+                     <Zoom><div className="header">Portfolio v Reactu</div></Zoom>
+                     <Fade down><div className="hr">&nbsp;</div></Fade>
+                     <Zoom><div className="content">Vytvoření vlastního webu. Wordpress backend, frontend v Reactu. Práce s daty pomocí REST API.</div></Zoom>
                   </div>
                </div>
             </div>
-         </div >
+            <div className="contact">
+               <div className="header">
+                  <Fade left>
+                     <h2>Contact</h2>
+                  </Fade>
+                  <Fade left>
+                     <hr />
+                  </Fade>
+               </div>
+               <div className="content">
+                  <Zoom>
+                     <p><img src={mail} className="mail" alt="E-mail" />marek.marek@hotmail.cz</p>
+                  </Zoom>
+                  <Zoom>
+                     <p><img src={phone} className="phone" alt="Telefon" />728 303 508</p>
+                  </Zoom>
+                  <Zoom>
+                     <p><img src={user} className="user" alt="Web" />www.marek.media</p>
+                  </Zoom>
+               </div>
+            </div>
+         </div>
       </>
    )
 }

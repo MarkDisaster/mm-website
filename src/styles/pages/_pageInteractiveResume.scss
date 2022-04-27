@@ -186,6 +186,35 @@ $font-family-primary: 'Nunito Sans', sans-serif;
       justify-content: space-around;
       width: 100%;
       margin-top: 150px;
+
+
+      .box {
+        position: absolute;
+      }
+      
+      .box,
+      .checked {
+        width: 150px;
+        height: auto;
+        margin-left: 275px;
+        margin-top: 25px;
+      }
+      
+      .fade {
+        overflow: hidden;
+        position: absolute;
+        animation: boxChecked 1.5s ease-in alternate;
+      }
+
+      @keyframes boxChecked {
+        0% {
+          width: 0%;
+        }
+      
+        100% {
+          width: 100%;
+        }
+      }
     }
 
     .timeline {
@@ -265,6 +294,7 @@ $font-family-primary: 'Nunito Sans', sans-serif;
     }
 
     .projects {
+      margin-top: 75px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -273,8 +303,7 @@ $font-family-primary: 'Nunito Sans', sans-serif;
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        max-width: 980px;
-        margin-left: 150px;
+        max-width: 850px;
       }
 
       .project {
@@ -283,7 +312,6 @@ $font-family-primary: 'Nunito Sans', sans-serif;
         flex-direction: row;
         flex: 0 0 50%;
         padding-top: 60px;
-        padding-right: 150px;
 
         .header {
           width: 100%;
@@ -302,10 +330,46 @@ $font-family-primary: 'Nunito Sans', sans-serif;
         }
       }
 
+      .project:nth-child(odd) {
+        padding-right: 75px;
+      }
+
+      .project:nth-child(even) {
+        padding-left: 75px;
+      }
+
       .hr {
         background: #ffffff;
         width: 3px;
         margin-left: 6px;
+      }
+    }
+
+    .contact {
+      margin-top: 75px;
+
+      .header {
+        padding-left: 50px;
+      }
+
+      .content {
+        padding-top: 50px;
+        padding-bottom: 75px;  
+      
+      img {
+        width: 30px;
+        height: auto;
+        vertical-align: middle;
+        margin-right: 20px;
+      }
+    }
+
+      .content p {
+        text-align: center;
+        padding-left: 50px;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        font-weight: 800;
       }
     }
   }
