@@ -47,6 +47,10 @@
     @include bp-medium {
       max-width: 100%;
     }
+
+    @include bp-small {
+      padding: 50px 25px;
+    }
   }
 
   @include bp-medium {
