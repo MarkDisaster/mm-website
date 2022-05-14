@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import validator from 'validator'
 
@@ -17,16 +17,16 @@ function ContactForm() {
 
    const validateEmail = (e) => {
       var email = e.target.value
-    
+
       if (validator.isEmail(email)) {
-        setEmailError('')
+         setEmailError('')
       } else {
-        setEmailError('Neplatný e-mail.')
+         setEmailError('Neplatný e-mail.')
       }
-    }
+   }
 
    function handle(e) {
-      const newData = {...data}
+      const newData = { ...data }
       newData[e.target.id] = e.target.value
       setData(newData)
       console.log(data)
@@ -46,43 +46,43 @@ function ContactForm() {
          method: 'post',
          url: url,
          data: formData,
-         headers: {'Content-Type': 'multipart/form-data'},
-       })
-         .then(function (response) {
-           //handle success
-           //console.log(response.data);
-           setResponseMessage(response.data.message)
-           const newErrorMessages = {...errorMessages}
-           console.log(response.data)
+         headers: { 'Content-Type': 'multipart/form-data' },
+      })
+         .then(function(response) {
+            //handle success
+            //console.log(response.data);
+            setResponseMessage(response.data.message)
+            const newErrorMessages = { ...errorMessages }
+            console.log(response.data)
 
-           response.data.invalid_fields.forEach(input => {
-                 newErrorMessages[input.error_id.replace(/-/g, '')] = input.message
-                 document.querySelector(input.into).innerHTML = input.message;
+            response.data.invalid_fields.forEach(input => {
+               newErrorMessages[input.error_id.replace(/-/g, '')] = input.message
+               document.querySelector(input.into).innerHTML = input.message;
 
 
-                 setErrorMessages(newErrorMessages)
-                 console.log(newErrorMessages)
-               }
+               setErrorMessages(newErrorMessages)
+               console.log(newErrorMessages)
+            }
             )
-            
-            
+
+
             /*for(let i=0; i<response.data.invalid_fields.length; i++) {
                newErrorMessages[response.data.invalid_fields[i].error_id.replace(/-/g, '')] = response.data.invalid_fields[i].message
                setErrorMessages(newErrorMessages)
                console.log(newErrorMessages)
             }*/
 
-           if (response.data.status == 'mail_sent') {
-              setPostedForm(true)
-           }
+            if (response.data.status === 'mail_sent') {
+               setPostedForm(true)
+            }
          })
-         .catch(function (response) {
-           //handle error
-           console.log('error: ' + response);
+         .catch(function(response) {
+            //handle error
+            console.log('error: ' + response);
          });
    }
 
-   if (postedForm == false) {
+   if (postedForm === false) {
       return (
          <div className="contact-form">
             <form onSubmit={(e) => submit(e)}>
@@ -95,7 +95,7 @@ function ContactForm() {
                   <span className='validation wpcf7-form-control-wrap your-subject'></span>
                </div>
                <div>
-                  <input id="your-email" name="your-email" type="text" placeholder="E-mail *" onChange={(e) => {handle(e); validateEmail(e)}}></input>
+                  <input id="your-email" name="your-email" type="text" placeholder="E-mail *" onChange={(e) => { handle(e); validateEmail(e) }}></input>
                   <span className='validation wpcf7-form-control-wrap your-email'>{emailError}</span>
                </div>
                <div>
@@ -112,12 +112,12 @@ function ContactForm() {
             <form>
                <h2>{responseMessage}</h2>
             </form>
-            
+
          </div>
       )
    }
 
-   
+
 
 
 

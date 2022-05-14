@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { ReactComponent as Logo } from '../assets/images/mm-logo-white-animated.svg'
 
 function LogoAnimated() {
@@ -11,25 +11,25 @@ function LogoAnimated() {
    let timer
 
    useEffect(() => {
-      setImages(svgRef.current.children); 
-   })
-   
+      setImages(svgRef.current.children);
+   }, [setImages])
+
    function animation(i) {
-      
-      if(stop == 1)
-      return;
-      
+
+      if (stop === 1)
+         return;
+
       if (i < 21) {
-         timer = setTimeout(function () {               
-            for(let i = 0; i < images.length; i++) {
+         timer = setTimeout(function() {
+            for (let i = 0; i < images.length; i++) {
                images[i].style.display = 'none';
             }
-   
+
             images[i].style.display = 'block';
             animation(++i);
          }, animationSpeed);
-      } if( i == 20 ) {
-         timer = setTimeout(function () {
+      } if (i === 20) {
+         timer = setTimeout(function() {
             animation(1);
          }, animationSpeed);
       }
@@ -38,11 +38,11 @@ function LogoAnimated() {
    function stopAnimation() {
       stop = 1
       clearTimeout(timer);
-      
-      for(let i = 0; i < images.length; i++) {
+
+      for (let i = 0; i < images.length; i++) {
          images[i].style.display = 'none';
       }
-      
+
       images[20].style.display = 'block';
       stop = 1
    }
@@ -52,7 +52,7 @@ function LogoAnimated() {
       animation(1);
    };
 
-   
+
    return (
       <>
          <Logo ref={svgRef} onMouseEnter={playAnimation} onMouseLeave={stopAnimation} onClick={stopAnimation} />

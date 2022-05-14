@@ -199,11 +199,22 @@ $font-family-primary: 'Nunito Sans', sans-serif;
         margin-left: 275px;
         margin-top: 25px;
       }
+
+      .invisible {
+        display: none;
+      }
       
       .fade {
+        animation: boxChecked 1.2s ease-in alternate;
+      }
+
+      .check {
         overflow: hidden;
         position: absolute;
-        animation: boxChecked 1.5s ease-in alternate;
+      }
+
+      .width-0 {
+        width: 0%;
       }
 
       @keyframes boxChecked {
@@ -212,7 +223,7 @@ $font-family-primary: 'Nunito Sans', sans-serif;
         }
       
         100% {
-          width: 100%;
+          width: 100%
         }
       }
     }

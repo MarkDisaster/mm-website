@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { Fade, Zoom } from 'react-reveal';
 
 import line from '../assets/images/resume/line-zig-zag.svg';
@@ -37,6 +37,26 @@ function PageInteractiveResume() {
 
    document.body.className = 'page-resume';
 
+   const [checked, setChecked] = useState(0)
+   const myRef = useRef();
+
+   window.onscroll = function() {
+      const x = myRef.current.offsetLeft;
+      if (x === 0 && checked === 0) {
+         console.log('už, ale jenom jednou')
+         setChecked(1)
+         myRef.current.classList.add('fade')
+
+      }
+   };
+
+   const scroll = () => {
+      console.log('adfasd')
+   }
+
+
+
+
    return (
       <>
          <div className="page page-1">
@@ -53,14 +73,14 @@ function PageInteractiveResume() {
             <div className="born-in">
                <div className="header">
                   <Fade left>
-                     <h2>Born in</h2>
+                     <h2>Born on</h2>
                   </Fade>
                   <Fade left>
                      <hr />
                   </Fade>
                </div>
                <Zoom>
-                  <img src={calendar} className="calendar" alt="Born in" />
+                  <img src={calendar} className="calendar" alt="Born on" />
                </Zoom>
             </div>
             <div className="lives-in">
@@ -98,10 +118,10 @@ function PageInteractiveResume() {
                </div>
                <div className="header header-2">
                   <Zoom>
-                     <div class="checkbox">
-                        <img src={checkboxBox} class="box" />
-                        <div class="fade">
-                           <img src={checkboxCheck} class="checked" />
+                     <div className="checkbox">
+                        <img src={checkboxBox} className="box" />
+                        <div className="check" ref={myRef}>
+                           <img src={checkboxCheck} className="checked" />
                         </div>
                      </div>
                   </Zoom>
@@ -132,7 +152,7 @@ function PageInteractiveResume() {
                         </Zoom>
                         <Zoom>
                            <div>
-                              2011 - teď<br />
+                              2011 - now<br />
                               Web developer<br />
                               Nemocnice Jindřichův<br />
                               Hradec
@@ -142,7 +162,7 @@ function PageInteractiveResume() {
                      <div className="item">
                         <Zoom>
                            <div>
-                              2021 - teď<br />
+                              2021 - now<br />
                               OSVČ<br />
                            </div>
                         </Zoom>
@@ -157,7 +177,7 @@ function PageInteractiveResume() {
                         <Zoom>
                            <div>
                               2021<br />
-                              Start výuky<br />
+                              Start learning<br />
                               React a SASS<br />
                            </div>
                         </Zoom>
@@ -284,11 +304,14 @@ function PageInteractiveResume() {
                      <p><img src={phone} className="phone" alt="Telefon" />728 303 508</p>
                   </Zoom>
                   <Zoom>
+                     <p><img src={user} className="user" alt="LinkedIn" />LinkedIn</p>
+                  </Zoom>
+                  <Zoom>
                      <p><img src={user} className="user" alt="Web" />www.marek.media</p>
                   </Zoom>
                </div>
             </div>
-         </div>
+         </div >
       </>
    )
 }
