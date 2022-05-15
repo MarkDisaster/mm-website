@@ -16,13 +16,14 @@
 
 @keyframes down-to-center {
   from {
-    margin-left: -100vw;
-    margin-bottom: -100vw;
-  }
-  to {
-    margin-left: 0;
-    margin-bottom: 0;
-  }
+      margin-left: -100vw;
+      margin-bottom: -100vw;
+    }
+  
+    to {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
 }
 
 $font-family-primary: 'Nunito Sans', sans-serif;
@@ -31,9 +32,19 @@ $font-family-primary: 'Nunito Sans', sans-serif;
   overflow-x: hidden;
   background-color: $secondary-color;
 
-  h1, h2, div, p {
+  h1, h2, div, p, a {
     font-family: $font-family-primary;
     color: $quaternary-color;
+  }
+
+  a {
+    font-weight: 800;
+    transition: .5s;
+    text-decoration: none;
+
+    &:hover {
+      color: #03fcfc;
+    }
   }
   
 
@@ -50,50 +61,18 @@ $font-family-primary: 'Nunito Sans', sans-serif;
   
   .page-1 {
     height: calc(100vh + 30px);
-    padding: 100px;
-    padding-bottom: 250px;
+    width: 100%;
     text-align: center;
+    align-items: flex-start;
+    justify-content: flex-end;
     overflow: hidden;
-    justify-content: center;
-  
-    .header-container {
+
+    svg {
+      min-width: 1350px;
+      width: 1900px;
+      max-width: 100%;
+      height: auto;
       animation: down-to-center 1s forwards;
-      margin-left: -100vw;
-      margin-bottom: -100vw;
-      //transition: all 5s ease-in-out;
-      //animation-fill-mode: forwards;
-    }
-  
-    .header-container.center {
-      margin-left: 0;
-      margin-bottom: 0;
-    }
-  
-  
-    h1,
-    h2 {
-      line-height: 1;
-      margin: 0;
-      text-transform: uppercase;
-      font-weight: 900;
-    }
-  
-    h1 {
-      font-size: 13rem;
-      color: #03fcfc;
-      @include longshadow(darken($secondary-color, 8%));
-      margin-left: -200px;
-    }
-  
-    h2 {
-      font-size: 4rem;
-      margin-left: 25px;
-      color: $quaternary-color;
-    }
-  
-    h1:nth-child(2) {
-      margin-left: 200px;
-      @include longshadow(darken($secondary-color, 11%));
     }
   }
 

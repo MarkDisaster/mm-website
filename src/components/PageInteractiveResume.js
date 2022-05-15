@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react'
 import { Fade, Zoom } from 'react-reveal';
 
+import MMtextAnimated from './MMtextAnimated'
 import line from '../assets/images/resume/line-zig-zag.svg';
+
 import calendar from '../assets/images/resume/calendar.svg';
 import map from '../assets/images/resume/map-czech-republic.svg';
 import mapPin from '../assets/images/resume/map-pin.svg';
@@ -43,7 +45,6 @@ function PageInteractiveResume() {
    window.onscroll = function() {
       const x = myRef.current.offsetLeft;
       if (x === 0 && checked === 0) {
-         console.log('už, ale jenom jednou')
          setChecked(1)
          myRef.current.classList.add('fade')
 
@@ -60,11 +61,8 @@ function PageInteractiveResume() {
    return (
       <>
          <div className="page page-1">
-            <div className="header-container">
-               <h1>Marek</h1>
-               <h1>Marek</h1>
-               <h2>Web developer</h2>
-            </div>
+
+            <MMtextAnimated />
          </div>
          <div className="line">
             <img src={line} className="line" />
@@ -304,11 +302,15 @@ function PageInteractiveResume() {
                      <p><img src={phone} className="phone" alt="Telefon" />728 303 508</p>
                   </Zoom>
                   <Zoom>
-                     <p><img src={user} className="user" alt="LinkedIn" />LinkedIn</p>
+                     <p><img src={user} className="user" alt="Web" /><a href="https://marek.media" target="_blank" rel="noopener noreferrer nofollow">www.marek.media</a></p>
                   </Zoom>
                   <Zoom>
-                     <p><img src={user} className="user" alt="Web" />www.marek.media</p>
+                     <p><img src={user} className="user" alt="LinkedIn" /><a href="https://linkedin.com/in/marekmarekcz" target="_blank" rel="noopener noreferrer nofollow">LinkedIn</a></p>
                   </Zoom>
+                  <Zoom>
+                     <p><img src={git} className="git" alt="Github" /><a href="https://github.com/markdisaster" target="_blank" rel="noopener noreferrer nofollow">GitHub</a></p>
+                  </Zoom>
+
                </div>
             </div>
          </div >
